@@ -228,7 +228,9 @@
 				$methods.displayScore();
 			})
 
-			$selector.remove();
+			if (!$initVars.finished) {
+				$selector.remove();
+			}
 			//when body contains no clickable elements finish game
 			if ($("body").children().length == $(".not-me", $("body")).length + $("br", $("body")).length + $("DOCTYPE", $("body")).length + $("title", $("body")).length + $("link", $("body")).length + $("meta", $("body")).length + $("style", $("body")).length + $("script", $("body")).length + $("noscript", $("body")).length + $("hr", $("body")).length){
 				$methods.finishGame();
